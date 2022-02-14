@@ -93,7 +93,7 @@ app.use((err, req, res, next) => {
     if (!err.message) err.message = 'Something went wrong';
     res.status(statusCode).render('error', { err });
 })
-
-app.listen(5000, () => {
+const port = process.env.PORT || 5000
+app.listen(port, () => {
     console.log('Serving on port 5000')
 })
